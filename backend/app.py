@@ -10,7 +10,12 @@ from analyzer import generate_impact_brief, generate_quick_summary
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "https://ambitchious.github.io",
+    "http://localhost:3000",
+    "http://localhost:5000",
+    "http://127.0.0.1:3000",
+])
 
 
 @app.route("/api/health")
